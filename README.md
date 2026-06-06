@@ -2,12 +2,14 @@
 
 A desktop terminal project for the LCKFB SZPI ESP32-S3 board.
 
-The device is intended to combine four small applications:
+The device is intended to become a geek desktop information and learning terminal:
 
 - Binance USDT-M perpetual futures price watch
 - English word and phrase review
 - AI translation
 - Local audio recording
+
+It should feel like a small always-on embedded terminal, not a reduced phone app. The product loop is: watch futures prices, translate useful trading or technical phrases, save them as review cards, and record quick voice notes or spoken practice.
 
 ## Target Hardware
 
@@ -84,10 +86,24 @@ Optional backend proxy
   optional Binance aggregation/cache
 ```
 
+The ESP32 should remain local-first. Phrase review and recording must work offline. The backend is used for AI translation, optional sync, optional recording metadata, and eventually market-data aggregation.
+
+## Product Spec
+
+See [docs/PRODUCT_SPEC.md](docs/PRODUCT_SPEC.md) for the multi-role analysis from product, design, backend architecture, hardware, and geek perspectives.
+
 ## Development Notes
 
 The firmware stack is not fixed yet. ESP-IDF is the preferred candidate because the board documentation and audio/display examples are likely to map cleanly to ESP-IDF components.
 
+Core implementation principles:
+
+- Keep Binance support display-only. Do not add trading controls or private exchange keys.
+- Do not store AI provider keys in firmware.
+- Prefer small, flat JSON APIs for ESP32 parsing.
+- Store user data on TF card using simple file formats.
+- Make all network-dependent views show stale, offline, and error states clearly.
+
 ## Status
 
-Initialized project documentation only. Firmware and backend implementation are pending.
+Product and architecture documentation initialized. Firmware and backend implementation are pending.
