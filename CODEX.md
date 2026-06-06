@@ -81,6 +81,7 @@ Recommended backend stack when needed: Node.js + Fastify + Redis + PostgreSQL + 
 
 - Board documentation: https://wiki.lckfb.com/zh-hans/szpi-esp32s3/
 - Product page: https://lckfb.com/project/detail/lckfb-esp32-s3-va?param=baseInfo
+- Verified board notes: `docs/BOARD_DETAILS.md`
 
 ## Open Decisions
 
@@ -94,4 +95,5 @@ Recommended backend stack when needed: Node.js + Fastify + Redis + PostgreSQL + 
 ## Key Reference Docs
 
 - Product spec: `docs/PRODUCT_SPEC.md`
+- Board details: `docs/BOARD_DETAILS.md`
 - Roadmap: `docs/ROADMAP.md`

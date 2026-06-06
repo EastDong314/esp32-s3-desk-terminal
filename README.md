@@ -92,6 +92,10 @@ The ESP32 should remain local-first. Phrase review and recording must work offli
 
 See [docs/PRODUCT_SPEC.md](docs/PRODUCT_SPEC.md) for the multi-role analysis from product, design, backend architecture, hardware, and geek perspectives.
 
+## Board Details
+
+See [docs/BOARD_DETAILS.md](docs/BOARD_DETAILS.md) for the verified LCKFB SZPI ESP32-S3 board notes from the official wiki, including ESP-IDF version guidance, shared I2C devices, PCA9557 dependencies, LCD, TF card, ES7210, ES8311, IMU, camera, Wi-Fi, and bring-up order.
+
 ## Development Notes
 
 The firmware stack is not fixed yet. ESP-IDF is the preferred candidate because the board documentation and audio/display examples are likely to map cleanly to ESP-IDF components.

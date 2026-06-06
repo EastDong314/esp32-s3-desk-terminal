@@ -2,16 +2,18 @@
 
 ## Phase 1: Local Board Bring-Up
 
-- Confirm ESP-IDF or alternate firmware framework.
+- Confirm ESP-IDF version, preferably `5.1.4` for parity with official examples unless there is a documented reason to use another version.
 - Build and flash a minimal hello-world firmware.
 - Confirm Flash and PSRAM initialization.
-- Bring up LCD display.
-- Bring up touch input.
+- Initialize shared I2C on GPIO1/GPIO2.
+- Initialize PCA9557 before LCD, speaker amplifier, or camera use.
+- Bring up ST7789 LCD and GPIO42 PWM backlight.
+- Bring up FT6336 touch input.
 - Connect to Wi-Fi.
-- Read and write TF card files.
-- Validate ES7210 audio capture.
-- Validate ES8311 audio playback.
-- Validate QMI8658 basic motion reads.
+- Read and write TF card files through SDMMC 1-bit mode on GPIO48/GPIO47/GPIO21.
+- Validate ES7210 audio capture on I2S0.
+- Validate ES8311/ES8310-family audio playback and PA_EN amplifier control.
+- Validate QMI8658 basic motion reads at I2C address `0x6A`.
 
 ## Phase 2: App Shell
 
